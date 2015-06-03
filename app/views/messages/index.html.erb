@@ -1,0 +1,19 @@
+<h1>MessagesBoard</h1>
+<p>伝言を残すことができます。</p>
+
+
+<% @messages.each do |message| %>
+	<h3>名前:<%= message.name  %></h3>
+	<p> 内容:<%= message.body %> </p>
+<% end %>
+
+
+
+<%= form_for(Message.new) do |f| %>
+	名前:
+	<%= f.text_field :name %>
+
+	内容:
+	<%= f.text_field :body %>
+	<%= f.submit %>
+<% end %>
